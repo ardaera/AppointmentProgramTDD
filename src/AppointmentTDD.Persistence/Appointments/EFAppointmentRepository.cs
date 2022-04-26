@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointmentTDD.Services.Doctors.Exceptions
+namespace AppointmentTDD.Persistence.EF.Appointments
 {
-    public class PatientForUpdateNotFoundException:Exception
+    public class EFAppointmentRepository: AppointmentRepository
     {
     }
 }

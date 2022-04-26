@@ -36,7 +36,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         [Fact]
         public void Add_adds_doctor_properly()
         {
-            AddDoctorDto dto = CreateDoctorDto();
+            AddPatientDto dto = CreateDoctorDto();
 
             _sut.Add(dto);
 
@@ -62,7 +62,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         {
             Doctor doctor = CreateDoctor();
             _dataContext.Manipulate(x => x.Doctors.Add(doctor));
-            UpdateDoctorDto dto = CreateUpdateDoctorDto();
+            UpdatePatientDto dto = CreateUpdateDoctorDto();
 
             _sut.Update(doctor.Id, dto);
 
@@ -75,11 +75,11 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         {
             Doctor doctor = CreateDoctor();
             _dataContext.Manipulate(x => x.Doctors.Add(doctor));
-            UpdateDoctorDto dto = CreateUpdateDoctorDto();
+            UpdatePatientDto dto = CreateUpdateDoctorDto();
 
             Action expected = () => _sut.Update(312102, dto);
 
-            expected.Should().ThrowExactly<DoctorForUpdateNotFoundException>();
+            expected.Should().ThrowExactly<PatientForUpdateNotFoundException>();
         }
 
         [Fact]
@@ -101,12 +101,12 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
 
             Action expected = () => _sut.Delete(180515);
 
-            expected.Should().ThrowExactly<DoctorForDeleteNotFoundException>();
+            expected.Should().ThrowExactly<PatientForDeleteNotFoundException>();
         }
 
-        private static UpdateDoctorDto CreateUpdateDoctorDto()
+        private static UpdatePatientDto CreateUpdateDoctorDto()
         {
-            return new UpdateDoctorDto
+            return new UpdatePatientDto
             {
                 Field = "maghz",
                 FirstName = "kamran2",
@@ -126,9 +126,9 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
             };
         }
 
-        private static AddDoctorDto CreateDoctorDto()
+        private static AddPatientDto CreateDoctorDto()
         {
-            return new AddDoctorDto
+            return new AddPatientDto
             {
                 Field = "ghalb",
                 FirstName = "firstname",

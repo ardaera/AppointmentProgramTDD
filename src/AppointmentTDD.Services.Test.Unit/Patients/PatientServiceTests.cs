@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointmentTDD.Services.Doctors.Exceptions
+namespace AppointmentTDD.Services.Test.Unit.Patients
 {
-    public class PatientForUpdateNotFoundException:Exception
+    public class PatientServiceTests
     {
     }
 }

@@ -9,9 +9,9 @@ namespace AppointmentTDD.Services.Doctors.Contracts
 {
     public interface DoctorService : Service
     {
-        void Add(AddDoctorDto dto);
-        IList<GetDoctorDto> GetAll();
-        void Update(int id, UpdateDoctorDto dto);
+        void Add(AddPatientDto dto);
+        IList<GetPatientDto> GetAll();
+        void Update(int id, UpdatePatientDto dto);
         void Delete(int id);
     }
 }

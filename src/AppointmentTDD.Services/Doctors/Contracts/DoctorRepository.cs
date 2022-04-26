@@ -11,7 +11,7 @@ namespace AppointmentTDD.Services.Doctors.Contracts
     public interface DoctorRepository : Repository
     {
         void Add(Doctor doctor);
-        IList<GetDoctorDto> GetAll();
+        IList<GetPatientDto> GetAll();
         void Delete(Doctor doctor);
         Doctor FindId(int id);
     }
