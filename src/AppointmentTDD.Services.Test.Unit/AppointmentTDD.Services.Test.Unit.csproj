@@ -19,7 +19,7 @@
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 	</ItemGroup>
-
+	
   <ItemGroup>
     <Folder Include="Appointments\" />
     <Folder Include="Patients\" />
