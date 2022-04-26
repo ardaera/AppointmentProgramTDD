@@ -1,3 +1,6 @@
+using AppointmentTDD.Infrastructure.Application;
+using AppointmentTDD.Persistence;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +35,28 @@ namespace AppointmentTDD.RestAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AppointmentTDD.RestAPI", Version = "v1" });
             });
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterType<EFDataContext>()
+                .WithParameter("connectionString", Configuration["ConnectionString"])
+                 .AsSelf()
+                 .InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(typeof(EFCategoryRepository).Assembly)
+                      .AssignableTo<Repository>()
+                      .AsImplementedInterfaces()
+                      .InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(typeof(CategoryAppService).Assembly)
+                      .AssignableTo<Service>()
+                      .AsImplementedInterfaces()
+                      .InstancePerLifetimeScope();
+
+            builder.RegisterType<EFUnitOfWork>()
+                .As<UnitOfWork>()
+                .InstancePerLifetimeScope();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
