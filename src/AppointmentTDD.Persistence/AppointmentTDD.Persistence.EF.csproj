@@ -10,6 +10,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\AppointmentTDD.Entities\AppointmentTDD.Entities.csproj" />
 		<ProjectReference Include="..\DoctorAppointment.Entities\DoctorAppointment.Entities.csproj" />
 		<ProjectReference Include="..\DoctorAppointment.Services\DoctorAppointment.Services.csproj" />
 	</ItemGroup>

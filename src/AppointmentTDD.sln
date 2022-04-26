@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Migrations", "AppointmentTDD.Migrations\AppointmentTDD.Migrations.csproj", "{4937527C-05A0-4562-9AC7-FF480E311978}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Persistence", "AppointmentTDD.Persistence\AppointmentTDD.Persistence.csproj", "{1E3B9E4B-DB7E-4416-AA63-CD7C9ADD055D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Persistence.EF", "AppointmentTDD.Persistence\AppointmentTDD.Persistence.EF.csproj", "{1E3B9E4B-DB7E-4416-AA63-CD7C9ADD055D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Services", "AppointmentTDD.Services\AppointmentTDD.Services.csproj", "{E2382AF1-B7BA-417B-BEE0-2F71A7740B84}"
 EndProject
