@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.RestAPI", "A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BEB397E9-B98D-4F83-825D-EA081B2DEAD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.Services.Test.Unit", "AppointmentTDD.Services.Test.Unit\AppointmentTDD.Services.Test.Unit.csproj", "{37FA54A1-BA89-4FC3-A354-0E156C6026EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,9 +49,16 @@ Global
 		{FFCFD770-3D97-41B4-B052-58A0C5D3E852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFCFD770-3D97-41B4-B052-58A0C5D3E852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFCFD770-3D97-41B4-B052-58A0C5D3E852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37FA54A1-BA89-4FC3-A354-0E156C6026EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FA54A1-BA89-4FC3-A354-0E156C6026EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FA54A1-BA89-4FC3-A354-0E156C6026EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FA54A1-BA89-4FC3-A354-0E156C6026EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37FA54A1-BA89-4FC3-A354-0E156C6026EE} = {BEB397E9-B98D-4F83-825D-EA081B2DEAD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {957CB78A-D1E2-4506-993D-158C2F8703B4}
