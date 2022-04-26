@@ -19,7 +19,7 @@ namespace AppointmentTDD.Infrastructure.Test
             _connection.Open();
         }
 
-        private ConstructorInfo? FindSuitableConstructor<TDbContext>() where TDbContext : DbContext
+        private ConstructorInfo FindSuitableConstructor<TDbContext>() where TDbContext : DbContext
         {
             var flags = BindingFlags.Instance |
                         BindingFlags.Public |

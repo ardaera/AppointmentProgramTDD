@@ -4,6 +4,7 @@ using AppointmentTDD.Persistence.EF;
 using AppointmentTDD.Persistence.EF.Doctors;
 using AppointmentTDD.Services.Doctors;
 using AppointmentTDD.Services.Doctors.Contracts;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +30,6 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
             _unitOfWork = new EFUnitOfWork(_dataContext);
             _repository = new EFDoctorRepository(_dataContext);
             _sut = new DoctorAppService(_unitOfWork, _repository);
-
-
         }
 
 
@@ -47,9 +46,8 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
 
             _sut.Add(dto);
 
-
-
-
+            _dataContext.Doctors.Should().Contain(x => x.FirstName == dto.FirstName);
+            _dataContext.Doctors.Should().Contain(x => x.LastName == dto.LastName);
         }
 
 
