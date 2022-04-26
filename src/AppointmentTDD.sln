@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.Entities", "AppointmentTDD.Entities\AppointmentTDD.Entities.csproj", "{F99A255D-DB2E-4BE7-B463-3582DB8B2BDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Entities", "AppointmentTDD.Entities\AppointmentTDD.Entities.csproj", "{F99A255D-DB2E-4BE7-B463-3582DB8B2BDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.Infrastructure", "AppointmentTDD.Infrastructure\AppointmentTDD.Infrastructure.csproj", "{E75CB5B6-3188-4295-90B1-2C420DFF6902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Infrastructure", "AppointmentTDD.Infrastructure\AppointmentTDD.Infrastructure.csproj", "{E75CB5B6-3188-4295-90B1-2C420DFF6902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.Migrations", "AppointmentTDD.Migrations\AppointmentTDD.Migrations.csproj", "{4937527C-05A0-4562-9AC7-FF480E311978}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Migrations", "AppointmentTDD.Migrations\AppointmentTDD.Migrations.csproj", "{4937527C-05A0-4562-9AC7-FF480E311978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.Persistence", "AppointmentTDD.Persistence\AppointmentTDD.Persistence.csproj", "{1E3B9E4B-DB7E-4416-AA63-CD7C9ADD055D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Persistence", "AppointmentTDD.Persistence\AppointmentTDD.Persistence.csproj", "{1E3B9E4B-DB7E-4416-AA63-CD7C9ADD055D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.Services", "AppointmentTDD.Services\AppointmentTDD.Services.csproj", "{E2382AF1-B7BA-417B-BEE0-2F71A7740B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.Services", "AppointmentTDD.Services\AppointmentTDD.Services.csproj", "{E2382AF1-B7BA-417B-BEE0-2F71A7740B84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentTDD.RestAPI", "AppointmentTDD.RestAPI\AppointmentTDD.RestAPI.csproj", "{FFCFD770-3D97-41B4-B052-58A0C5D3E852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTDD.RestAPI", "AppointmentTDD.RestAPI\AppointmentTDD.RestAPI.csproj", "{FFCFD770-3D97-41B4-B052-58A0C5D3E852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BEB397E9-B98D-4F83-825D-EA081B2DEAD8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D2EDDBA8-406D-4E87-A239-76FCFB47CED6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,14 +50,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{F99A255D-DB2E-4BE7-B463-3582DB8B2BDE} = {D2EDDBA8-406D-4E87-A239-76FCFB47CED6}
-		{E75CB5B6-3188-4295-90B1-2C420DFF6902} = {D2EDDBA8-406D-4E87-A239-76FCFB47CED6}
-		{4937527C-05A0-4562-9AC7-FF480E311978} = {D2EDDBA8-406D-4E87-A239-76FCFB47CED6}
-		{1E3B9E4B-DB7E-4416-AA63-CD7C9ADD055D} = {D2EDDBA8-406D-4E87-A239-76FCFB47CED6}
-		{E2382AF1-B7BA-417B-BEE0-2F71A7740B84} = {D2EDDBA8-406D-4E87-A239-76FCFB47CED6}
-		{FFCFD770-3D97-41B4-B052-58A0C5D3E852} = {D2EDDBA8-406D-4E87-A239-76FCFB47CED6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {957CB78A-D1E2-4506-993D-158C2F8703B4}
