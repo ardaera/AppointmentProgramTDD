@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace AppointmentTDD.Entities
 {
-    public class Doctor:Person
+    public class Doctor : Person
     {
         public Doctor()
         {
-            Appointments = new List<Appointment>();
+            Appointments = new HashSet<Appointment>();
         }
         public string Field { get; set; }
-        public List<Appointment> Appointments { get; set; }
+        public HashSet<Appointment> Appointments { get; set; }
     }
 }

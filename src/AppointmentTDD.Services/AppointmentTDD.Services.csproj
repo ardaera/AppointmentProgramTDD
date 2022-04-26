@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AppointmentTDD.Entities\AppointmentTDD.Entities.csproj" />
+    <ProjectReference Include="..\AppointmentTDD.Infrastructure\AppointmentTDD.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

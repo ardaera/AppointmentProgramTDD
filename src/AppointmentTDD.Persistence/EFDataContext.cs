@@ -1,4 +1,5 @@
 ﻿using AppointmentTDD.Entities;
+using AppointmentTDD.Persistence.EF.Doctors;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointmentTDD.Persistence
+namespace AppointmentTDD.Persistence.EF
 {
-    public class EFDataContext: DbContext
+    public class EFDataContext : DbContext
     {
-        public EFDataContext (string connectionString) :
+        public EFDataContext(string connectionString) :
             this(new DbContextOptionsBuilder().UseSqlServer(connectionString).Options)
         {
 

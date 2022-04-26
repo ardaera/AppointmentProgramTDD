@@ -10,9 +10,9 @@ namespace AppointmentTDD.Entities
     {
         public Patient()
         {
-            Appointments = new List<Appointment>();
+            Appointments = new HashSet<Appointment>();
         }
 
-        public List<Appointment> Appointments { get; set; }
+        public HashSet<Appointment> Appointments { get; set; }
     }
 }

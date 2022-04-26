@@ -1,5 +1,5 @@
 using AppointmentTDD.Infrastructure.Application;
-using AppointmentTDD.Persistence;
+using AppointmentTDD.Persistence.EF;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +26,6 @@ namespace AppointmentTDD.RestAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -40,16 +39,16 @@ namespace AppointmentTDD.RestAPI
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterType<EFDataContext>()
-                .WithParameter("connectionString", Configuration["ConnectionString"])
+                .WithParameter("connectionString", Configuration["connectionString"])
                  .AsSelf()
                  .InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(EFCategoryRepository).Assembly)
+            builder.RegisterAssemblyTypes(typeof(Repository).Assembly)
                       .AssignableTo<Repository>()
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(CategoryAppService).Assembly)
+            builder.RegisterAssemblyTypes(typeof(Service).Assembly)
                       .AssignableTo<Service>()
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope();
@@ -59,7 +58,6 @@ namespace AppointmentTDD.RestAPI
                 .InstancePerLifetimeScope();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
