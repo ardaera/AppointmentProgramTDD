@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+AppointmentTDD.v3.ncrunchsolution
+
+AppointmentTDD.v3.ncrunchsolution.user
