@@ -1,5 +1,6 @@
 ﻿using AppointmentTDD.Entities;
 using AppointmentTDD.Infrastructure.Application;
+using AppointmentTDD.Services.Appointments.Contracts;
 using AppointmentTDD.Services.Doctors.Contracts;
 using System;
 using System.Collections.Generic;
@@ -36,10 +37,12 @@ namespace AppointmentTDD.Persistence.EF.Doctors
         {
             return _dataContext.Doctors.Select(x => new GetDoctorDto
             {
+                Id= x.Id,
                 Field = x.Field,
                 FirstName = x.FirstName,
                 LastName = x.LastName,
                 NationalCode = x.NationalCode,
+                Appointments = x.Appointments
             }).ToList();
         }
     }

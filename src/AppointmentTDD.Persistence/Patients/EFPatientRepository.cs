@@ -37,6 +37,7 @@ namespace AppointmentTDD.Persistence.EF.Patients
                 FirstName = x.FirstName,
                 LastName = x.LastName,
                 NationalCode = x.NationalCode,
+                Appointments = x.Appointments
             }).ToList();
         }
     }

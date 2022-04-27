@@ -24,6 +24,7 @@
     <ProjectReference Include="..\AppointmentTDD.Infrastructure\AppointmentTDD.Infrastructure.csproj" />
     <ProjectReference Include="..\AppointmentTDD.Persistence\AppointmentTDD.Persistence.EF.csproj" />
     <ProjectReference Include="..\AppointmentTDD.Services\AppointmentTDD.Services.csproj" />
+    <ProjectReference Include="..\AppointmentTDD.Tests.Tools\AppointmentTDD.Tests.Tools.csproj" />
   </ItemGroup>
 
 </Project>

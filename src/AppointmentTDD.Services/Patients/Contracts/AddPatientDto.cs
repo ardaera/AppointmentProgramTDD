@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppointmentTDD.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,10 @@ namespace AppointmentTDD.Services.Patients.Contracts
 {
     public class AddPatientDto
     {
+        public int Id { get; set; }
         public string NationalCode { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public HashSet<Appointment> Appointments { get; set; }
     }
 }

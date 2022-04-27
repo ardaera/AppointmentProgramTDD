@@ -1,10 +1,15 @@
-﻿namespace AppointmentTDD.Services.Doctors.Contracts
+﻿using AppointmentTDD.Entities;
+using System.Collections.Generic;
+
+namespace AppointmentTDD.Services.Doctors.Contracts
 {
     public class GetDoctorDto
     {
+        public int Id { get; set; }
         public string NationalCode { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Field { get; set; }
+        public HashSet<Appointment> Appointments { get; set; }
     }
 }

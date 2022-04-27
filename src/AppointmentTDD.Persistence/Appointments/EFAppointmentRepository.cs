@@ -39,6 +39,8 @@ namespace AppointmentTDD.Persistence.EF.Appointments
                 Date = x.Date,
                 DoctorId = x.DoctorId,
                 PatientId = x.PatientId,
+                Doctor=x.Doctor,
+                Patient=x.Patient,
             }).ToList();
         }
     }
