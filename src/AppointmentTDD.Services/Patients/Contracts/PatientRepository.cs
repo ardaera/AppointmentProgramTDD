@@ -14,6 +14,5 @@ namespace AppointmentTDD.Services.Patients.Contracts
         IList<GetPatientDto> GetAll();
         Patient FindId(int id);
         void Delete(Patient patient);
-
     }
 }

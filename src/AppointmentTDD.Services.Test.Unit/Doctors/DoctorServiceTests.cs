@@ -36,7 +36,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         [Fact]
         public void Add_adds_doctor_properly()
         {
-            AddDoctorDto dto = CreateDoctorDto();
+            AddDoctorDto dto = CreateAddDoctorDto();
 
             _sut.Add(dto);
 
@@ -126,7 +126,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
             };
         }
 
-        private static AddDoctorDto CreateDoctorDto()
+        private static AddDoctorDto CreateAddDoctorDto()
         {
             return new AddDoctorDto
             {

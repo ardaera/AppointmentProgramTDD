@@ -1,5 +1,7 @@
 using AppointmentTDD.Infrastructure.Application;
 using AppointmentTDD.Persistence.EF;
+using AppointmentTDD.Persistence.EF.Doctors;
+using AppointmentTDD.Services.Doctors;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,12 +45,12 @@ namespace AppointmentTDD.RestAPI
                  .AsSelf()
                  .InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(Repository).Assembly)
+            builder.RegisterAssemblyTypes(typeof(EFDoctorRepository).Assembly)
                       .AssignableTo<Repository>()
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(Service).Assembly)
+            builder.RegisterAssemblyTypes(typeof(DoctorAppService).Assembly)
                       .AssignableTo<Service>()
                       .AsImplementedInterfaces()
                       .InstancePerLifetimeScope();
