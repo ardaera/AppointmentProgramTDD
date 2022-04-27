@@ -45,7 +45,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         }
 
         [Fact]
-        public void GetAll_getall_doctors_properly()
+        public void GetAll_getalls_doctor_properly()
         {
             List<Doctor> doctors = CreateListOfDoctors();
             _dataContext.Manipulate(x => x.Doctors.AddRange(doctors));
