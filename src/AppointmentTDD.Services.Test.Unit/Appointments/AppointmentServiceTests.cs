@@ -46,12 +46,7 @@ namespace AppointmentTDD.Services.Test.Unit.Appointments
             PatientFactory patientFactory = new PatientFactory();
             Patient patient = patientFactory.CreatePatient();
             _dataContext.Manipulate(x => x.Patients.Add(patient));
-            AddAppointmentDto dto = new AddAppointmentDto
-            {
-                Date = DateTime.Now.Date,
-                DoctorId = doctor.Id,
-                PatientId = patient.Id,
-            };
+            AddAppointmentDto dto = CreateAddAppointmentDto(doctor, patient);
 
             _sut.Add(dto);
 
@@ -67,37 +62,29 @@ namespace AppointmentTDD.Services.Test.Unit.Appointments
             DoctorFactory doctorFactory = new DoctorFactory();
             Doctor doctor = doctorFactory.CreateDoctor();
             _dataContext.Manipulate(x => x.Doctors.Add(doctor));
-            List<Patient> patients = new List<Patient>
-            {
-                new Patient
-                {
-                    FirstName = "a",
-                    LastName = "b",
-                    NationalCode ="0258741369"
-                },new Patient
-                {
-                    FirstName = "a2",
-                    LastName = "b2",
-                    NationalCode ="0258742369"
-                },new Patient
-                {
-                    FirstName = "a3",
-                    LastName = "b3",
-                    NationalCode ="0258341369"
-                },new Patient
-                {
-                    FirstName = "a4",
-                    LastName = "b4",
-                    NationalCode ="0258741469"
-                },new Patient
-                {
-                    FirstName = "a5",
-                    LastName = "b5",
-                    NationalCode ="0255741369"
-                },
-            };
+            List<Patient> patients = CreateListOfPatients();
             _dataContext.Manipulate(x => x.Patients.AddRange(patients));
-            List<Appointment> appointments = new List<Appointment>
+            List<Appointment> appointments = 
+                CreateListOfAppointment(doctor, patients);
+            _dataContext.Manipulate(x => x.AddRange(appointments));
+            PatientFactory patientFactory = new PatientFactory();
+            Patient patient = patientFactory.CreatePatient();
+            _dataContext.Manipulate(x => x.Patients.Add(patient));
+            AddAppointmentDto dto = new AddAppointmentDto
+            {
+                Date = DateTime.Now.Date,
+                DoctorId = doctor.Id,
+                PatientId = patient.Id,
+            };
+
+            Action expected = () => _sut.Add(dto);
+
+            expected.Should().Throw<DoctorAppointmentsAreFullException>();
+        }
+
+        private static List<Appointment> CreateListOfAppointment(Doctor doctor, List<Patient> patients)
+        {
+            return new List<Appointment>
             {
                 new Appointment
                 {
@@ -127,36 +114,49 @@ namespace AppointmentTDD.Services.Test.Unit.Appointments
                     PatientId=patients[4].Id,
                 },
             };
-            _dataContext.Manipulate(x => x.AddRange(appointments));
-            PatientFactory patientFactory = new PatientFactory();
-            Patient patient = patientFactory.CreatePatient();
-            _dataContext.Manipulate(x => x.Patients.Add(patient));
-            AddAppointmentDto dto = new AddAppointmentDto
+        }
+
+        private static List<Patient> CreateListOfPatients()
+        {
+            return new List<Patient>
+            {
+                new Patient
+                {
+                    FirstName = "a",
+                    LastName = "b",
+                    NationalCode ="0258741369"
+                },new Patient
+                {
+                    FirstName = "a2",
+                    LastName = "b2",
+                    NationalCode ="0258742369"
+                },new Patient
+                {
+                    FirstName = "a3",
+                    LastName = "b3",
+                    NationalCode ="0258341369"
+                },new Patient
+                {
+                    FirstName = "a4",
+                    LastName = "b4",
+                    NationalCode ="0258741469"
+                },new Patient
+                {
+                    FirstName = "a5",
+                    LastName = "b5",
+                    NationalCode ="0255741369"
+                },
+            };
+        }
+
+        private static AddAppointmentDto CreateAddAppointmentDto(Doctor doctor, Patient patient)
+        {
+            return new AddAppointmentDto
             {
                 Date = DateTime.Now.Date,
                 DoctorId = doctor.Id,
                 PatientId = patient.Id,
             };
-
-            Action expected = () => _sut.Add(dto);
-
-            expected.Should().Throw<DoctorAppointmentsAreFullException>();
         }
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
