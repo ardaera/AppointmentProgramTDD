@@ -9,5 +9,9 @@ namespace AppointmentTDD.Services.Appointments.Contracts
 {
     public interface AppointmentService: Service
     {
+        void Add(AddAppointmentDto dto);
+        IList<GetAppointmentDto> GetAll();
+        void Update(int id, UpdateAppointmentDto dto);
+        void Delete(int id);
     }
 }
