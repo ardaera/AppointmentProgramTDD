@@ -36,7 +36,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         [Fact]
         public void Add_adds_doctor_properly()
         {
-            AddPatientDto dto = CreateDoctorDto();
+            AddDoctorDto dto = CreateDoctorDto();
 
             _sut.Add(dto);
 
@@ -52,7 +52,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
 
             var expected = _sut.GetAll();
 
-            expected.Should().HaveCount(3);
+            expected.Should().HaveCount(2);
             expected.Should().Contain(x => x.FirstName == "kamran");
             expected.Should().Contain(x => x.FirstName == "kamran2");
         }
@@ -62,7 +62,7 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         {
             Doctor doctor = CreateDoctor();
             _dataContext.Manipulate(x => x.Doctors.Add(doctor));
-            UpdatePatientDto dto = CreateUpdateDoctorDto();
+            UpdateDoctorDto dto = CreateUpdateDoctorDto();
 
             _sut.Update(doctor.Id, dto);
 
@@ -75,11 +75,11 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
         {
             Doctor doctor = CreateDoctor();
             _dataContext.Manipulate(x => x.Doctors.Add(doctor));
-            UpdatePatientDto dto = CreateUpdateDoctorDto();
+            UpdateDoctorDto dto = CreateUpdateDoctorDto();
 
             Action expected = () => _sut.Update(312102, dto);
 
-            expected.Should().ThrowExactly<PatientForUpdateNotFoundException>();
+            expected.Should().ThrowExactly<DoctorForUpdateNotFoundException>();
         }
 
         [Fact]
@@ -101,12 +101,12 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
 
             Action expected = () => _sut.Delete(180515);
 
-            expected.Should().ThrowExactly<PatientForDeleteNotFoundException>();
+            expected.Should().ThrowExactly<DoctorForDeleteNotFoundException>();
         }
 
-        private static UpdatePatientDto CreateUpdateDoctorDto()
+        private static UpdateDoctorDto CreateUpdateDoctorDto()
         {
-            return new UpdatePatientDto
+            return new UpdateDoctorDto
             {
                 Field = "maghz",
                 FirstName = "kamran2",
@@ -126,9 +126,9 @@ namespace AppointmentTDD.Services.Test.Unit.Doctors
             };
         }
 
-        private static AddPatientDto CreateDoctorDto()
+        private static AddDoctorDto CreateDoctorDto()
         {
-            return new AddPatientDto
+            return new AddDoctorDto
             {
                 Field = "ghalb",
                 FirstName = "firstname",

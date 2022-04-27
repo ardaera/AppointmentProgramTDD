@@ -1,6 +1,6 @@
 ﻿namespace AppointmentTDD.Services.Doctors.Contracts
 {
-    public class GetPatientDto
+    public class GetDoctorDto
     {
         public string NationalCode { get; set; }
         public string FirstName { get; set; }

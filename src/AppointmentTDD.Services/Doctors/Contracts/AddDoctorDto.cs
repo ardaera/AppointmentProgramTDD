@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppointmentTDD.Services.Doctors.Contracts
 {
-    public class AddPatientDto
+    public class AddDoctorDto
     {
         public string NationalCode { get; set; }
         public string FirstName { get; set; }

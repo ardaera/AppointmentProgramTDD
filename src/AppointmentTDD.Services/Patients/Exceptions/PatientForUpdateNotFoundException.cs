@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppointmentTDD.Services.Patients.Exceptions
 {
-    public class AppointmentForUpdateNotFoundException:Exception
+    public class PatientForUpdateNotFoundException : Exception
     {
     }
 }

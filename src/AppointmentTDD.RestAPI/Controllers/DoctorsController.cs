@@ -16,19 +16,19 @@ namespace AppointmentTDD.RestAPI.Controllers
         }
 
         [HttpPost]
-        public void Add(AddPatientDto dto)
+        public void Add(AddDoctorDto dto)
         {
             _service.Add(dto);
         }
 
         [HttpGet]
-        public IList<GetPatientDto> GetAll()
+        public IList<GetDoctorDto> GetAll()
         {
             return _service.GetAll();
         }
 
         [HttpPut("{id}")]
-        public void Update(int id, UpdatePatientDto dto)
+        public void Update(int id, UpdateDoctorDto dto)
         {
             _service.Update(id, dto);
         }

@@ -21,7 +21,7 @@ namespace AppointmentTDD.Services.Doctors
             _repository = repository;
         }
 
-        public void Add(AddPatientDto dto)
+        public void Add(AddDoctorDto dto)
         {
             var doctor = new Doctor
             {
@@ -39,7 +39,7 @@ namespace AppointmentTDD.Services.Doctors
            var doctor= _repository.FindId(id);
             if (doctor==null)
             {
-                throw new PatientForDeleteNotFoundException();
+                throw new DoctorForDeleteNotFoundException();
             }
             else
             {
@@ -48,17 +48,17 @@ namespace AppointmentTDD.Services.Doctors
             }
         }
 
-        public IList<GetPatientDto> GetAll()
+        public IList<GetDoctorDto> GetAll()
         {
             return _repository.GetAll();
         }
 
-        public void Update(int id, UpdatePatientDto dto)
+        public void Update(int id, UpdateDoctorDto dto)
         {
             var doctor = _repository.FindId(id);
             if (doctor==null)
             {
-                throw new PatientForUpdateNotFoundException();
+                throw new DoctorForUpdateNotFoundException();
             }
             else
             {
